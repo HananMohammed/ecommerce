@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Cache;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('test', function (){
+    dd('test');
+});
 Route::auth();
 Route::get('lang/{locale}', 'langcontroller@lang')->name('lang');
 Route::get('/home', 'DashboardController@index')->name('home')->middleware('auth');
