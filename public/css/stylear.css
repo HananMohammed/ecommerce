@@ -1,0 +1,22 @@
+ul.ml-auto {margin-right: auto; margin-left: 0 !important;}
+.dot1{
+    margin-right: 55%;
+    animation: animate1 5s infinite ;
+
+}
+.dot2{
+    margin-right: 55.5%;
+    animation: animate2 5s infinite ;
+}
+@keyframes animate1 {
+
+    from {margin-right: 55%;}
+    to {margin-right: 43%;}
+}
+@keyframes animate2 {
+
+    from {margin-right: 55.5%;}
+    to {margin-right: 43.5%;}
+}
+.form-submit{ margin:0; margin-right: -50%!important;}
+.contact-section h1{margin-right: -16%!important;}

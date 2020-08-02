@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e2f37df2-4651-4653-bd7b-b0a3039723d7" name="electrotel.sa" url="http://electrotel.sa">
+        <fileTransfer host="electrotel.sa" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="aa718a3b-0ee2-4210-99e8-10dc2733d0b4" name="farmkem" url="http://farmkem.net">
+        <fileTransfer host="farmkem.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
