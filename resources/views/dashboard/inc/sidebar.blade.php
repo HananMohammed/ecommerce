@@ -77,25 +77,19 @@
                         <ul>
 
                             <li>
-                                <a href="{{route('dslider.index')}}">
+                                <a href="{{route('admin.slider.index')}}">
                                     <i class="metismenu-icon"></i>
                                     {{trans('dashboards.slider')}}
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('dabout.index')}}">
+                                <a href="{{route('admin.about.edit')}}">
                                     <i class="metismenu-icon"></i>
                                     {{trans('about.about')}}
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('dfeatures.index')}}">
-                                    <i class="metismenu-icon"></i>
-                                    {{trans('features.feature')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('dmission.index')}}">
+                                <a href="{{route('admin.mission.edit')}}">
                                     <i class="metismenu-icon"></i>
                                     {{trans('mission.mission')}}
                                 </a>
@@ -110,36 +104,36 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="{{route('dphone.index')}}">
+                                    <a href="{{route('admin.phone.index')}}">
                                         <i class="metismenu-icon"></i>
                                         {{trans('phone.addPhone')}}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{route('dmail.index')}}">
+                                    <a href="{{route('admin.email.index')}}">
                                         <i class="metismenu-icon"></i>
                                         {{trans('mail.addMail')}}
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="{{route('dmap.index')}}">
-                                        <i class="metismenu-icon"></i>
-                                        {{trans('map.addmap')}}
-                                    </a>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <a href="{{route('dmap.index')}}">--}}
+{{--                                        <i class="metismenu-icon"></i>--}}
+{{--                                        {{trans('map.addmap')}}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
 
-                                <li>
-                                    <a href="{{route('daddress.index')}}">
-                                        <i class="metismenu-icon"></i>
-                                        {{trans('address.addAddress')}}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('dsocial.index')}}">
-                                        <i class="metismenu-icon"></i>
-                                        {{trans('social.addsocial')}}
-                                    </a>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <a href="{{route('daddress.index')}}">--}}
+{{--                                        <i class="metismenu-icon"></i>--}}
+{{--                                        {{trans('address.addAddress')}}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('dsocial.index')}}">--}}
+{{--                                        <i class="metismenu-icon"></i>--}}
+{{--                                        {{trans('social.addsocial')}}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                             </ul>
                         </li>
 
@@ -155,27 +149,27 @@
                             </a>
                             <ul>
                                 @can('author.dashboard')
-                                <li>
-                                    <a href="{{route('dcategory.index')}}">
+{{--                                <li>--}}
+{{--                                    <a href="{{route('dcategory.index')}}">--}}
 
-                                        {{trans('project.category')}}
-                                    </a>
-                                </li>
-                                    <li>
-                                        <a href="{{route('dproject.index')}}">
+{{--                                        {{trans('project.category')}}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{route('dproject.index')}}">--}}
 
-                                            {{trans('project.allproject')}}
-                                        </a>
-                                    </li>
+{{--                                            {{trans('project.allproject')}}--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
                                 @endcan
 
                                 @can('user.dashboard')
-                                <li>
-                                    <a href="{{route('dseo.index')}}">
+{{--                                <li>--}}
+{{--                                    <a href="{{route('dseo.index')}}">--}}
 
-                                        {{trans('seo.addseo')}}
-                                    </a>
-                                </li>
+{{--                                        {{trans('seo.addseo')}}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                                 @endcan
                             </ul>
                         </li>
@@ -189,12 +183,12 @@
                             </a>
                             <ul>
 
-                                <li>
-                                    <a href="{{route('dseo.index')}}">
+{{--                                <li>--}}
+{{--                                    <a href="{{route('dseo.index')}}">--}}
 
-                                        {{trans('seo.addseo')}}
-                                    </a>
-                                </li>
+{{--                                        {{trans('seo.addseo')}}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
 
                             </ul>
                         </li>

@@ -1,4 +1,4 @@
-@extends('dashboard.layaout.home')
+@extends('dashboard.layouts.home')
 
 @section('content')
     <div class="app-main__outer">

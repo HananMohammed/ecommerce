@@ -2,7 +2,7 @@
 return[
     "admin"=>"Admin Management",
     'name' => 'Name',
-    'email'=>'Email',
+    'email'=>'EmailRequest',
     'action'=>'Actions ',
     'role'=>'Roles',
     'edit'=>'Edit',

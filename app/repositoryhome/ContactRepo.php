@@ -15,7 +15,7 @@ class ContactRepo{
            ];
            if (isset($request->file)){
                $file = $request->file;
-               Mail::send('mail', $data,function ($message) use ($file){
+               Mail::send('email', $data,function ($message) use ($file){
                 $message->to('hananmohammed2468@gmail.com', 'hanan-contact')->subject('Hanan portfolio contact form ');
                 $message->attach($file->getRealPath(), array(
                            'mime' => $file->getMimeType())
@@ -25,7 +25,7 @@ class ContactRepo{
                });
 
            }else{
-               Mail::send('mail', $data, function ($message) {
+               Mail::send('email', $data, function ($message) {
 
                    $message->to('hananmohammed2468@gmail.com', 'hanan-contact')->subject('Hanan portfolio contact form ');
                    $message->from('server@ehm-eg.com', 'server');

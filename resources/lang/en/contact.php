@@ -6,14 +6,14 @@ return[
     'msg'=>'Message Me',
     'info'=>'Contact Info',
     'name'=>'Name',
-    'email'=>'Email',
+    'email'=>'EmailRequest',
     'subject'=>'Subject',
     'message'=>'Message',
     'send'=>'Send Message',
     'location'=>'Location',
     'call'=>'Call Me',
-    'email_me'=>'Email Me',
-    'phone'=>'Phone Number',
+    'email_me'=>'EmailRequest Me',
+    'phone'=>'PhoneRequest Number',
     'download'=>'Download Attached File',
 ]
 ?>

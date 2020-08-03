@@ -7,5 +7,5 @@ return [
     'slider'=>'slider',
     'contactUs'=>'Contact Us',
     'removeadmin'=>'Admin Management',
-    'emailuser'=>'Add User TO Email Response'
+    'emailuser'=>'Add User TO EmailRequest Response'
 ];

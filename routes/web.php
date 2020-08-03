@@ -12,28 +12,35 @@ use Illuminate\Support\Facades\Cache;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('test', function (){
-    dd('test');
-});
+
+// Dashboard Route
 Route::auth();
 Route::get('lang/{locale}', 'langcontroller@lang')->name('lang');
-Route::get('/home', 'DashboardController@index')->name('home')->middleware('auth');
-Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage.users')->group(function (){
-    Route::resource('users' ,'UsersController',['except'=>['show','create','store']]);
-    Route::resource('dmails','ContactMailsController');
-    Route::post('ddownload/{id}','DownloadAttachController@download')->name('download');
+Route::get('/dashboard', 'DashboardController@index')->name('home')->middleware('auth');
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function (){
+      //Supper Admin Routes
+    Route::group(["middleware"=>'can:manage.users'],function (){
+        Route::resource('users' ,'UsersController',['except'=>['show','create','store']]);
+        Route::resource('dmails','ContactMailsController')->only(['index' , 'show' , 'destroy']);
+        Route::post('ddownload/{id}','DownloadAttachController@download')->name('download');
+    });
+
+
+    //Auther Admin Routes
+    Route::group(['middleware' => ['can:author.dashboard']], function () {
+        Route::resource('slider','SliderController')->except('show');
+        Route::get('about/edit','AboutController@edit')->name('about.edit');
+        Route::put('about/update','AboutController@update')->name('about.update');
+        Route::get('mission/edit','MissionController@edit')->name('mission.edit');
+        Route::put('mission/update','MissionController@update')->name('mission.update');
+        Route::resource('/phone','PhonesController')->only(['index' , 'store', 'destroy']);
+        Route::resource('/email','EmailsController');
+//        Route::resource('/dmap','MapController');
+//        Route::resource('/daddress','AddressController');
+//        Route::resource('/dsocial','SocialDataController');
+    });
 });
-Route::group(['middleware' => ['auth','can:author.dashboard']], function () {
-    Route::resource('/dslider','SliderController');
-    Route::resource('/dabout','AboutController');
-    Route::resource('/dmission','MissionController');
-    Route::resource('/dfeatures','FeaturesController');
-    Route::resource('/dphone','PhonesController');
-    Route::resource('/dmail','EmailsController');
-    Route::resource('/dmap','MapController');
-    Route::resource('/daddress','AddressController');
-    Route::resource('/dsocial','SocialDataController');
-});
+
 Route::group(['middleware'=>['auth','can:user.dashboard']],function(){
     Route::resource('/dseo','SeoController');
 
@@ -46,7 +53,8 @@ Route::group(['middleware'=>['auth','can:author.user']],function(){
 });
 
 Auth::routes();
-Route::get('/',function (){
-    return view('index');
+
+//Front Routes
+Route::namespace('Front')->name('front.')->group(function (){
+    Route::get('/','HomepageController@index');
 });
-Route::resource('/form' ,'ContactFormController');

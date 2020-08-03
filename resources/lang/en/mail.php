@@ -1,6 +1,6 @@
 <?php
 return[
-    'mail'=>'Mail',
+    'email'=>'Mail',
     'allMail'=>'All Mails ',
     'addMail'=>'Add Mail',
     'indvTo'=>'Individual Mail To',

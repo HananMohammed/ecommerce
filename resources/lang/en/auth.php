@@ -17,7 +17,7 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'register'=>'Add Admin',
     'name'=>'Name',
-    'email'=>'Email',
+    'email'=>'EmailRequest',
     'password'=>'password',
     'confirmPassword'=>'Confirm Password ',
 

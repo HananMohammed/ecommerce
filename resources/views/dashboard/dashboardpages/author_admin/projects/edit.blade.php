@@ -1,5 +1,5 @@
 
-@extends('dashboard.layaout.home')
+@extends('dashboard.layouts.home')
 {{--@php--}}
 {{--//print_r($_REQUEST)--}}
 {{--@endphp--}}
@@ -60,7 +60,7 @@
                                 <div class="clone2 hide">
                                     <div class="control-group input-group" style="margin-top:10px">
                                         <input type="file" name="images[]" class="form-control">
-                                       
+
                                         @if($errors->has('images'))
                                             {{--                                                {{dd($errors)}}--}}
                                             <span class="error">{{ $errors->get('images')[0] }}</span>

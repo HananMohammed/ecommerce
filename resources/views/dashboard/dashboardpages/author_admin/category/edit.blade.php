@@ -1,5 +1,5 @@
 
-@extends('dashboard.layaout.home')
+@extends('dashboard.layouts.home')
 {{--@php--}}
 {{--//print_r($_REQUEST)--}}
 {{--@endphp--}}

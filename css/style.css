@@ -527,7 +527,7 @@ div.table > div {
 }
 /*End Banner Adv*/
 /*******************************************************************************************************
-										Preview	Menu				
+										Preview	Menu
 ********************************************************************************************************/
 .main-nav > ul > li .sub-menu > li.menu-item-preview {
   position: relative;
@@ -1127,7 +1127,7 @@ div.table .product-info .product-title {
   padding: 15px 0;
 }
 /*End Wishlist Popup*/
-/*Begin Email Popup*/
+/*Begin EmailRequest Popup*/
 #mask {
   position: absolute;
   left: 0;
@@ -1210,7 +1210,7 @@ div.table .product-info .product-title {
 .content-popup select option {
   padding: 0 15px;
 }
-/*End Email Popup*/
+/*End EmailRequest Popup*/
 /*Begin Mini Cart*/
 .mini-cart-box {
   position: relative;
@@ -2156,7 +2156,7 @@ a.post-cat {
   margin-top: 20px;
 }
 /**************************************************************************************************
-											Home 2			
+											Home 2
 **************************************************************************************************/
 .dropdown-box {
   position: relative;
@@ -3450,7 +3450,7 @@ body .shop-button {
   margin-top: 10px;
 }
 /****************************************************************************************************
-											Home 4	
+											Home 4
 ****************************************************************************************************/
 .main-header.bg-color2 .search-form {
   border-color: #fff;
@@ -5008,7 +5008,7 @@ body .shop-button {
   margin-bottom: 50px;
 }
 /*************************************************************************************************
-										Detail					
+										Detail
 **************************************************************************************************/
 .related-product > h2.title30 {
   margin-bottom: 22px;
@@ -5883,7 +5883,7 @@ td.product-thumbnail img {
 }
 /*End Wooocommerce*/
 /*************************************************************************************************
-										Login/Register 
+										Login/Register
 **************************************************************************************************/
 .title-form-account {
   margin-bottom: 20px;
@@ -5996,7 +5996,7 @@ input.register-button.save-change {
   margin-bottom: 20px;
 }
 /*************************************************************************************************
-									End	Login/Register 
+									End	Login/Register
 **************************************************************************************************/
 /******************************************Begin Preload***************************************************/
 .preload #loading {
@@ -6154,7 +6154,7 @@ margin-top: 4%;
   text-align: center;
 }
 td {
- 
+
   font-weight: 300;
   font-size: 18px;
   color: #fff;}

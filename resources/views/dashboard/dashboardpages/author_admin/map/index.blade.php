@@ -1,4 +1,4 @@
-@extends('dashboard.layaout.home')
+@extends('dashboard.layouts.home')
 {{--@php--}}
 {{--dd($data);--}}
 {{--@endphp--}}
@@ -36,7 +36,7 @@
 
 
                                 <br>
-                                <button class="btn btn-success" type="submit">{{trans('mail.addMail')}}</button>
+                                <button class="btn btn-success" type="submit">{{trans('email.addMail')}}</button>
 
                             </form>
                         </div>
@@ -45,7 +45,7 @@
                 <br>
                 <div class="col-md-12">
                     <div class="card-body">
-                        <h5 class="card-title">{{trans('mail.allMail')}}</h5>
+                        <h5 class="card-title">{{trans('email.allMail')}}</h5>
                         <div class="main-card p-5 card">
                             {{--                    @if(count($barnds)>0)--}}
                             <table id="example" class="display nowrap mb-0 table table-bordered table-striped" style="width:100%">

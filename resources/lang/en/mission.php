@@ -1,13 +1,13 @@
 <?php
 return[
-     'mission'=>'Mission And Vission',
-     'missionAr'=>'Mission in Arabic'  ,
-     'missionEn'=>'Mission in English',
+     'mission'=>'MissionRequest And Vission',
+     'missionAr'=>'MissionRequest in Arabic'  ,
+     'missionEn'=>'MissionRequest in English',
      'vissionAr'=>'Vission in Arabic'  ,
      'vissionEn'=>'Vission in English',
      'add'=>'Add ',
      'Update'=>'Update '  ,
-    'missionw'=>'Mission',
+    'missionw'=>'MissionRequest',
     'vision'=>'our vision',
     'value'=>'our value',
     'readmore'=>'Read more'
