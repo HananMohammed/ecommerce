@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Emails extends Model
 {
 
-    protected $fillable = ['mail' ,'created_by'];
 
     public function user()
     {

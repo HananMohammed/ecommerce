@@ -15,7 +15,7 @@ class MissionController extends Controller
     public function edit()
     {
         $mission =Mission::first();
-        return view('dashboard.dashboardpages.author_admin.mission.edit' ,compact('mission'));
+        return view('admins.dashboardpages.author_admin.mission.edit' ,compact('mission'));
     }
 
     /**

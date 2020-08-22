@@ -20,9 +20,9 @@ class SeoController extends Controller
     {
         $data= $crud->getAllData($modelseo);
         if(count($crud->getAllData($modelseo))>0) {
-            return view('dashboard.dashboardpages.user_admin.seo.update')->with('data',$data);
+            return view('admins.dashboardpages.user_admin.seo.update')->with('data',$data);
         }else{
-            return view('dashboard.dashboardpages.user_admin.seo.edit' );
+            return view('admins.dashboardpages.user_admin.seo.edit' );
         }
     }
 
@@ -34,7 +34,7 @@ class SeoController extends Controller
      */
     public function create()
     {
-        return view('dashboard.dashboardpages.seo.update');
+        return view('admins.dashboardpages.seo.update');
     }
 
 

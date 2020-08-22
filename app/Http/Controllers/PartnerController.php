@@ -16,7 +16,7 @@ class PartnerController extends Controller
     public function index(  CrudRepository $crud ,Partner $partner )
     {
         $data = $crud->getAllData($partner);
-        return view('dashboard.dashboardpages.partners.index' ,compact('data'));
+        return view('admins.dashboardpages.partners.index' ,compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        return view('dashboard.dashboardpages.partners.edit');
+        return view('admins.dashboardpages.partners.edit');
 
     }
 
@@ -63,7 +63,7 @@ class PartnerController extends Controller
     public function edit($id ,CrudRepository $crud ,Partner $modelname )
     {
         $data=$crud->getById($modelname,$id);
-       return view('dashboard.dashboardpages.partners.update',compact('data'));;
+       return view('admins.dashboardpages.partners.update',compact('data'));;
     }
 
     /**

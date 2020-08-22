@@ -5,18 +5,22 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PhoneRequest;
 use App\model\Phones;
+use App\interfaces_Implementation\StoreAndUpdateImp ;
 
 class PhonesController extends Controller
 {
     private $phone ;
+    private $storeAndUpdate ;
 
     /**
      * PhonesController constructor.
      * @param Phones $phone
+     * @param StoreAndUpdateImp $storeAndUpdate
      */
-    public function __construct(Phones $phone)
+    public function __construct(Phones $phone ,StoreAndUpdateImp $storeAndUpdate)
     {
         $this->phone = $phone ;
+        $this->storeAndUpdate = $storeAndUpdate ;
     }
 
     /**
@@ -28,7 +32,7 @@ class PhonesController extends Controller
     {
         $phone = $this->phone->all();
 
-        return view('dashboard.dashboardpages.author_admin.phone.index',compact('phone'));
+        return view('admins.dashboardpages.author_admin.phone.index',compact('phone'));
     }
 
     /**
@@ -39,12 +43,8 @@ class PhonesController extends Controller
      */
     public function store(PhoneRequest $request)
     {
-        $this->phone->create([
-            'phone' => $request->phone
-        ]) ;
-
+        $this->storeAndUpdate->store($request , $this->phone) ;
         return redirect()->back();
-
     }
     /**
      * Remove the specified resource from storage.

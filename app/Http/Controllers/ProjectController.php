@@ -18,7 +18,7 @@ class ProjectController extends Controller
     public function index(CrudRepository $crud ,Project $model)
     {
         $data=$crud->getAllData($model);
-        return view('dashboard.dashboardpages.author_admin.projects.index')->with('data',$data);
+        return view('admins.dashboardpages.author_admin.projects.index')->with('data',$data);
 
     }
 
@@ -30,7 +30,7 @@ class ProjectController extends Controller
     public function create()
     {
         $category =category::all();
-        return view('dashboard.dashboardpages.author_admin.projects.edit',compact('category'));
+        return view('admins.dashboardpages.author_admin.projects.edit',compact('category'));
     }
 
     /**
@@ -66,7 +66,7 @@ class ProjectController extends Controller
     {
         $data=$crud->getById($model ,$id );
         $category =category::all();
-        return view('dashboard.dashboardpages.author_admin.projects.update',compact('data','category')) ;
+        return view('admins.dashboardpages.author_admin.projects.update',compact('data','category')) ;
 
     }
 

@@ -21,10 +21,10 @@ class EmailUsersController extends Controller
 
             $emaildata=$crud->getById($modile,1);
 
-            return view('dashboard.dashboardpages.admin.emailUser.update',compact('emaildata'));
+            return view('admins.dashboardpages.admin.emailUser.update',compact('emaildata'));
         }else{
 
-            return view('dashboard.dashboardpages.admin.emailUser.edit');
+            return view('admins.dashboardpages.admin.emailUser.edit');
         }
     }
 

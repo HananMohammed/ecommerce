@@ -20,7 +20,7 @@ class UsersController extends Controller
      */
     public function index()
     {     $users =User::all();
-         return view('dashboard.dashboardpages.admin.users.index')->with('users',$users);
+         return view('admins.admin.users.index')->with('users',$users);
     }
 
     /**
@@ -35,7 +35,7 @@ class UsersController extends Controller
             return redirect()->route('admin.users.index');
         }
         $roles =Role ::all();
-        return view('dashboard.dashboardpages.admin.users.edit')->with([
+        return view('admins.admin.users.edit')->with([
             'user'=>$user,
             'roles'=>$roles
         ]);

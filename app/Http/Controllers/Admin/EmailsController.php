@@ -25,7 +25,7 @@ class EmailsController extends Controller
     {
         $email = $this->email->all();
 
-        return view('dashboard.dashboardpages.author_admin.email.index',compact('email'));
+        return view('admins.dashboardpages.author_admin.email.index',compact('email'));
     }
 
     /**

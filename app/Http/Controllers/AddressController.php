@@ -21,7 +21,7 @@ class AddressController extends Controller
         //$address=new AddressRepository();
         $addressArray=$crud->getAllData($add);
 
-        return view('dashboard.dashboardpages.author_admin.address.address',compact('addressArray'));
+        return view('admins.dashboardpages.author_admin.address.address',compact('addressArray'));
 
     }
 

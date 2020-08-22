@@ -21,7 +21,7 @@ class SocialDataController extends Controller
 
         $soialArray= $crud->getAllData($socialModel);
         $sData=$crud->getAllData($socialDataModel);
-          return view('dashboard.dashboardpages.author_admin.social.social',compact('soialArray','sData'));
+          return view('admins.dashboardpages.author_admin.social.social',compact('soialArray','sData'));
     }
 
     /**

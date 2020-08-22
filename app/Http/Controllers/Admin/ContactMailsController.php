@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\ContactForm;
 use App\Http\Controllers\Controller;
-use App\repository\CrudRepository;
 
 class ContactMailsController extends Controller
 {
@@ -14,8 +13,10 @@ class ContactMailsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    $data =ContactForm::all();
-        return view('dashboard.dashboardpages.admin.contact_mails.forms',compact('data'));
+    {
+        $data =ContactForm::all();
+
+        return view('admins.admin.contact_mails.forms',compact('data'));
 
     }
 
@@ -23,22 +24,24 @@ class ContactMailsController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
+     * @param ContactForm $model
      * @return \Illuminate\Http\Response
      */
-    public function show(CrudRepository $crud,ContactForm $model,$id)
+    public function show(ContactForm $model,$id)
     {
-        $data =$crud->getById($model,$id);
-        return view('dashboard.dashboardpages.admin.contact_mails.form_detail',compact('data'));
+        $data = $model ->where('id' , $id )->get() ;
+        return view('admins.admin.contact_mails.form_detail',compact('data'));
     }
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
+     * @param ContactForm $model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CrudRepository $crud,ContactForm $model,$id)
+    public function destroy( ContactForm $model,$id)
     {
-         $crud->delete($id,$model);
+        $model ->where('id' , $id )->delete();
          return redirect()->back();
     }
 }

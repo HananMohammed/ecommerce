@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\interfaces_Implementation\StoreAndUpdateImp ;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SlidersUpdate;
-use App\repository\CrudRepository;
 use App\model\Slider;
 use App\Http\Requests\Sliders;
 
@@ -12,17 +11,18 @@ class SliderController extends Controller
 {
     private $slider ;
     private $crud ;
+    private  $storeAndUpdate ;
 
     /**
      * SliderController constructor.
      * @param CrudRepository $crud
      * @param Slider $slider
      */
-    public function __construct(CrudRepository $crud , Slider $slider)
+    public function __construct(CrudRepository $crud , Slider $slider , StoreAndUpdateImp $storeAndUpdate )
     {
           $this->slider = $slider ;
           $this->crud   = $crud ;
-
+          $this->storeAndUpdate = $storeAndUpdate;
     }
 
     /**
@@ -32,7 +32,7 @@ class SliderController extends Controller
     {
         $slides = $this->crud->getAllData($this->slider);
 
-        return view('dashboard.dashboardpages.author_admin.slider.index', compact('slides'));
+        return view('admins.dashboardpages.author_admin.slider.index', compact('slides'));
     }
     /**
      * Show the form for creating a new resource.
@@ -42,7 +42,7 @@ class SliderController extends Controller
     public function create()
     {
 
-        return view('dashboard.dashboardpages.author_admin.slider.create');
+        return view('admins.dashboardpages.author_admin.slider.create');
 
     }
 
@@ -52,7 +52,7 @@ class SliderController extends Controller
      */
     public function store(Sliders $request)
     {
-          $this->crud->store($request,$this->slider);
+          $this->storeAndUpdate->store($request,$this->slider);
           return redirect(route('admin.slider.index'));
     }
 
@@ -64,7 +64,7 @@ class SliderController extends Controller
     {
           $slider=$this->crud->getById($this->slider,$id);
 
-         return view('dashboard.dashboardpages.author_admin.slider.update',compact('slider'));
+         return view('admins.dashboardpages.author_admin.slider.update',compact('slider'));
 
     }
 
@@ -75,8 +75,8 @@ class SliderController extends Controller
      */
     public function update( SlidersUpdate $request , $id)
     {
-        $this->crud->update( $request,$id,$this->slider);
 
+        $this->storeAndUpdate->update( $id , $request ,$this->slider );
         return redirect()->route('admin.slider.index');
     }
 

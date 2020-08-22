@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index(CrudRepository $crud ,Category $catModel)
     {
          $data =   $crud->getAllData($catModel);
-         return view('dashboard.dashboardpages.author_admin.category.index',compact('data'));
+         return view('admins.dashboardpages.author_admin.category.index',compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.dashboardpages.author_admin.category.edit');
+        return view('admins.dashboardpages.author_admin.category.edit');
 
     }
 
@@ -40,7 +40,7 @@ class CategoryController extends Controller
     {
         $crud->store($request,$model);
         $data =$crud->getAllData($model);
-        return view('dashboard.dashboardpages.author_admin.category.index',compact('data'));    }
+        return view('admins.dashboardpages.author_admin.category.index',compact('data'));    }
 
     /**
      * Display the specified resource.
@@ -63,7 +63,7 @@ class CategoryController extends Controller
     {
         $data= $crud->getById( $modelname,$id) ;
 
-        return view('dashboard.dashboardpages.author_admin.category.update',compact('data'));
+        return view('admins.dashboardpages.author_admin.category.update',compact('data'));
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
     {
         $crud->update($req,$id , $modelname);
         $data = $crud->getAllData($modelname);
-        return view('dashboard.dashboardpages.author_admin.category.index' , compact('data'));
+        return view('admins.dashboardpages.author_admin.category.index' , compact('data'));
 
     }
 

@@ -16,7 +16,7 @@ class MapController extends Controller
     public function index( CrudRepository $crud,Map $mapModel)
     {
        $data= $crud->getAllData($mapModel);
-       return view('dashboard.dashboardpages.author_admin.map.index',compact('data'));
+       return view('admins.dashboardpages.author_admin.map.index',compact('data'));
     }
 
     /**

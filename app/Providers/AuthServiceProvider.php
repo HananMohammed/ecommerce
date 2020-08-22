@@ -39,13 +39,13 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         /*-----------------------------------------------*/
-        Gate::define('admin.dashboard',function ($user){
+        Gate::define('admin.admins',function ($user){
             return $user->hasRole(['admin']);
         });
-        Gate::define('author.dashboard',function ($user){
+        Gate::define('author.admins',function ($user){
             return $user->hasRole(['author']);
         });
-        Gate::define('user.dashboard',function ($user){
+        Gate::define('user.admins',function ($user){
             return $user->hasRole(['user']);
         });
         /*-----------------------------------------------*/

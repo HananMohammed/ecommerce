@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.home')
+@extends('admins.layouts.master')
 @section('content')
 
     <div class="container mt-3">
