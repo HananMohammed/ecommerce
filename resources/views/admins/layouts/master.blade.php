@@ -122,5 +122,6 @@
         });
     })
 </script>
+<script type="text/javascript" src="{{asset_public('scripts/admin/imageUpload.js')}}"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@ class UsersController extends Controller
 {
 
     public function __construct(){
+
         $this->middleware('auth');
     }
     /**
@@ -50,13 +51,11 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-         //dd($request);
         //allow to pass array of id's to roles method
         $user->roles()->sync($request->roles);
         $user->name=$request->name;
         $user->email=$request->email;
        if( $user->save()){
-       //dd($request->session()->flash('success',$user->name .' has been updated'));
        $request->session()->flash('success',$user->name .' has been updated');
        }else{
               $request->session()->flash('error','error updating that user');

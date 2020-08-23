@@ -50,14 +50,7 @@
                                 </a>
                             </li>
                             @endcan
-                            @can('admin.admins')
-                                <li>
-                                    <a href="{{route('admin.dmails.index')}}">
-                                        <i class="fa fa-envelope-o"></i>
-                                        {{trans('dashboards.mails')}}
-                                    </a>
-                                </li>
-                            @endcan
+                          
                             <li>
                                 <a href="{{route('admin.users.index')}}">
                                     <i class="metismenu-icon"></i>
@@ -67,6 +60,32 @@
                         </ul>
                     </li>
                     @endcan
+
+                    @can('manage.users')
+                        <li>
+                            <a href="#">
+                                <i class="metismenu-icon fa fa-envelope-o"></i>
+                                {{trans('dashboards.mails')}}
+                                <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                            </a>
+                            <ul>
+
+                                @can('admin.admins')
+                                    <li>
+                                        <a href="{{route('admin.dmails.index')}}">
+                                            <i class="metismenu-icon"></i>
+                                             {{trans('dashboards.mails')}}
+                                        </a>
+                                    </li>
+                                @endcan
+
+                            </ul>
+                        </li>
+                    @endcan
+
+
+
+
                     @can('author.admins')
                     <li>
                         <a href="#">

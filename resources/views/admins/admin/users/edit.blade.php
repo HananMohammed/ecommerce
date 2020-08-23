@@ -1,5 +1,7 @@
+@extends('admins.layouts.master')
 
-@extends('admins.layouts.home')
+@section('title') Admin Management @endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -11,7 +13,6 @@
                         <form action="{{route('admin.users.update',$user->id)}}" method="POST">
                          @method('put')
                             @csrf
-{{--                            {{method_field('put')}}--}}
                             <div class="form-group row">
                                 <label for="name" class="col-md-2 col-form-label text-md-right">Name</label>
 

@@ -1,27 +1,26 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\interfaces_Implementation\StoreAndUpdateImp ;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Sliders;
 use App\Http\Requests\SlidersUpdate;
 use App\model\Slider;
-use App\Http\Requests\Sliders;
 
 class SliderController extends Controller
 {
     private $slider ;
-    private $crud ;
     private  $storeAndUpdate ;
 
     /**
      * SliderController constructor.
-     * @param CrudRepository $crud
+     * @param StoreAndUpdateImp $storeAndUpdate
      * @param Slider $slider
      */
-    public function __construct(CrudRepository $crud , Slider $slider , StoreAndUpdateImp $storeAndUpdate )
+    public function __construct( Slider $slider , StoreAndUpdateImp $storeAndUpdate )
     {
           $this->slider = $slider ;
-          $this->crud   = $crud ;
           $this->storeAndUpdate = $storeAndUpdate;
     }
 
@@ -30,9 +29,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $slides = $this->crud->getAllData($this->slider);
+        $slides = $this->slider->all();
 
-        return view('admins.dashboardpages.author_admin.slider.index', compact('slides'));
+        return view('admins.author_admin.slider.index', compact('slides'));
     }
     /**
      * Show the form for creating a new resource.
@@ -42,7 +41,7 @@ class SliderController extends Controller
     public function create()
     {
 
-        return view('admins.dashboardpages.author_admin.slider.create');
+        return view('admins.author_admin.slider.create');
 
     }
 
@@ -62,9 +61,9 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-          $slider=$this->crud->getById($this->slider,$id);
+          $slider=$this->slider->find($id);
 
-         return view('admins.dashboardpages.author_admin.slider.update',compact('slider'));
+         return view('admins.author_admin.slider.update',compact('slider'));
 
     }
 
@@ -86,7 +85,7 @@ class SliderController extends Controller
      */
     public function destroy( $id)
     {
-        $this->crud->delete($id,$this->slider);
+        $this->slider->find($id)->delete();
 
         return redirect()->back();
     }

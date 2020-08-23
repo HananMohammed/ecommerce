@@ -49,14 +49,15 @@
                                 </div>
 
                                 <div class="control-group input-group" style="margin-top:10px">
-                                    <input type="file" name="image_path" class="form-control">
+                                    <input type="file" name="image_path" id="single-image"class="form-control" onchange="uploadImage()">
                                     <br>
                                     @error('image_path')
                                     <div style="color: darkred; font-weight: bold">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="card mt-2" style="width: 20%;margin: auto">
-                                    <img src="{{asset_public('image/'.$slider->image_path)}}" class="card-img">
+                                <br>
+                                <div  id = "image">
+                                    <img src="{{asset_public('image/'.$slider->image_path)}}" id ="loadedImage"   style="width:200px;height: 150px;margin-left:30%; border-radius: 10% ; box-shadow:3px 4px 2px 1px #9cada4">
                                 </div>
                                 <br>
                                 <button class="btn btn-success" type="submit">{{trans('slider.addSlide')}}</button>

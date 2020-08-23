@@ -15,14 +15,20 @@ use Illuminate\Support\Facades\Cache;
 
 // Dashboard Route
 Route::auth();
+
 Route::get('lang/{locale}', 'langcontroller@lang')->name('lang');
+
 Route::get('/admin', 'DashboardController@index')->name('home')->middleware('auth');
+
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function (){
-      //Supper Admin Routes
+
+    //Supper Admin Routes
     Route::group(["middleware"=>'can:manage.users'],function (){
+
         Route::resource('users' ,'UsersController',['except'=>['show','create','store']]);
         Route::resource('dmails','ContactMailsController')->only(['index' , 'show' , 'destroy']);
         Route::post('ddownload/{id}','DownloadAttachController@download')->name('download');
+
     });
 
 

@@ -1,4 +1,5 @@
-@extends('admins.layouts.home')
+@extends('admins.layouts.master')
+@section('title') Admin Management @endsection
 @section('content')
     <div class="container" >
         <div class="row justify-content-center">
