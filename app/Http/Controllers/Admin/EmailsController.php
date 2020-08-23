@@ -5,15 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmailRequest;
 use App\model\Emails;
+use App\interfaces_Implementation\StoreAndUpdateImp ;
 use Illuminate\Support\Facades\Auth;
 
 class EmailsController extends Controller
 {
     protected $email ;
+    protected $store ;
 
-   public function __construct(Emails $email)
+   public function __construct(Emails $email , StoreAndUpdateImp $store )
    {
        $this->email = $email ;
+       $this->store = $store ;
    }
 
     /**
@@ -25,7 +28,7 @@ class EmailsController extends Controller
     {
         $email = $this->email->all();
 
-        return view('admins.dashboardpages.author_admin.email.index',compact('email'));
+        return view('admins.author_admin.email.index',compact('email'));
     }
 
     /**
@@ -36,12 +39,9 @@ class EmailsController extends Controller
      */
     public function store(EmailRequest $request)
     {
-        $this->email->create([
-            'mail' => $request->mail ,
-            'created_by' => Auth::id()
-        ]);
+         $this->store->store($request ,$this->email);
 
-        return redirect()->back();
+         return redirect()->back();
     }
     /**
      * Remove the specified resource from storage.

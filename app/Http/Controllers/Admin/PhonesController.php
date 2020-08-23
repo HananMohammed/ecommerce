@@ -32,7 +32,7 @@ class PhonesController extends Controller
     {
         $phone = $this->phone->all();
 
-        return view('admins.dashboardpages.author_admin.phone.index',compact('phone'));
+        return view('admins.author_admin.phone.index',compact('phone'));
     }
 
     /**

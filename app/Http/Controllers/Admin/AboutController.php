@@ -13,7 +13,7 @@ class AboutController extends Controller
     /**
      * AboutController constructor.
      * @param About $about
-      */
+     */
     public function __construct(About $about  )
     {
         $this -> about = $about ;
@@ -22,6 +22,7 @@ class AboutController extends Controller
     public function edit()
     {
         $about = $this->about->first();
+
         return view('admins.author_admin.about.edit' ,compact('about'));
     }
 

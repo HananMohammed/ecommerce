@@ -12,6 +12,7 @@
                             <form method="post" action="{{route('admin.mission.update')}}"  >
                                 @csrf
                         @method('put')
+
                                 <div class="form-group">
                                     <label for="mission_ar">{{trans('mission.missionAr')}}</label>
                                     <textarea type="text"    name="mission_ar" id="mission_ar" class="form-control">{{$mission->mission_ar}}</textarea>

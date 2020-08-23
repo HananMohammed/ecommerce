@@ -5,17 +5,32 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MissionRequest;
 use App\model\Mission;
+use App\interfaces_Implementation\StoreAndUpdateImp;
 
 class MissionController extends Controller
 {
+    private $update ;
+    private $model ;
+
+    /**
+     * MissionController constructor.
+     * @param StoreAndUpdateImp $update
+     * @param Mission $model
+     */
+    public function __construct(StoreAndUpdateImp $update , Mission $model)
+    {
+        $this->update = $update ;
+        $this->model  = $model  ;
+    }
 
     /**
      * @return \Illuminate\View\View
      */
     public function edit()
     {
-        $mission =Mission::first();
-        return view('admins.dashboardpages.author_admin.mission.edit' ,compact('mission'));
+        $mission =$this->model->first();
+
+        return view('admins.author_admin.mission.edit' ,compact('mission'));
     }
 
     /**
@@ -24,14 +39,10 @@ class MissionController extends Controller
      */
     public function update(MissionRequest $request)
     {
+        $id = $this->model->first()->id;
 
-        $id = Mission::first()->id;
-        Mission::where('id' ,$id ) ->update([
-         'mission_ar' => $request -> mission_ar ,
-         'mission_en' => $request -> mission_en ,
-         'vission_ar' => $request -> vission_ar  ,
-         'vission_en' => $request -> vission_en ,
-    ]);
+        $this->update->update($id ,$request ,$this->model->first());
+
         return redirect()->back();
 
     }
