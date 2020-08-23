@@ -1,8 +1,14 @@
 
 <?php
 return [
-    'home' =>'Dashboard Home page',
+    'home' =>'Home',
     'lang' =>' عربي',
     'langval' =>'ar',
+    'categories'=>'Categories',
+    'brand'=>'Brands',
+    'contact'=>'Contact',
+    'login'=>'Login' ,
+    'register'=>'Register' ,
+
 ];
 ?>

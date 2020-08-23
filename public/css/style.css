@@ -1,121 +1,34 @@
-.colorgreen{color:#009e66; }
-.navbar-brand:hover {
-    color: #009e66 !important;
-    font-weight: bold;
+.outer-nav{
+    background-color: #343a40;
+    height: 200px;
 }
-.nav-link{
-    font-weight: bold !important;
-    color: #e6e6e6 !important;
-    font-size: 15px !important;
-    margin-right: 20px;
-    border-bottom: 2px solid transparent;
+.top-nav{
+    width: 90%;
+    margin-left:5%;
+    height: 40px !important;
+    border-radius: 2px;
+    background-color: white;
 }
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-.nav-link:hover{
-    color: #009e66 !important;
-    border-bottom: 2px solid #e6e6e6;
-}
-.active a{
-    /*border-top: 2px solid #e6e6e6;*/
-    border-bottom: 2px solid #e6e6e6;
-}
-.languages a{
-    font-weight: bold ;
-    color: #009e66 ;
-    font-size: 25px;
-}
-.languages a:hover{
-    color: #009e66 !important;
-    border-bottom: 2px solid #e6e6e6;
-}
-.container-fluid{
-padding: 0 !important;
-}
-.jumbotron {
-background-color: #212529 !important;
-    text-align: center;
-    margin-bottom: 0px !important;
-}
-.jumbotron p{
-    display: block;
-    font-size: 17px;
-    margin-bottom: 17px;
-    color: #9f9f9f;
-    font-family: Poppins,sans-serif;
+.top-nav li a {
+    padding: 0px 15px 0px 15px!important;
     font-weight: 500;
-    line-height: 1.95;
-    position: relative;
+    color:#1b262c!important;
 }
-.jumbotron h1{
-    font-size: 46px;
-    color: #f0f0f0;
-    position: relative;
-    font-weight: 700;
-    line-height: 100%;
-    padding-bottom:20px!important;
+.top-nav li :hover {
+    color : #D23600!important;
 }
-.line{
-     background-color:  #009e66 ;width: 10%;
-     height: 5px;
+#language{
+    color : #D23600!important;
+    font-weight: 800;
+    font-size: 20px;
+}
+#language:hover{
+      color: rgba(0,0,0,.5)!important;
 
 }
-.dot1{
-    width: 5px;
-    height: 10px;
-    border-radius: 50%;
-    transition: all ease 0.6s;
-    background-color: #212529;
-    margin-top: -24px;
-    margin-left: 43.3%;
-    animation: animate1 5s infinite ;
-
+.ul1{
+    float: right;
 }
-.dot2{
-    width: 5px;
-    height: 10px;
-    border-radius: 50%;
-    transition: all ease 0.6s;
-    background-color:#212529;
-    margin-top: -10px;
-    margin-left: 44%;
-    animation: animate2 5s infinite ;
-}
-@keyframes animate1 {
-
-    from {margin-left: 43.3%;}
-    to {margin-left: 55%;}
-}
-@keyframes animate2 {
-
-    from {margin-left: 44%;}
-    to {margin-left: 55.5%;}
-}
-.contact-section{
-    background-color: #212529!important;
-    padding : -40px 0px 0px 0px;
-}
-.ml-3, .mx-3 {
-    margin-left: 0rem!important;
-}
-.row{margin:0!important;}
-.form-submit{margin-left: 30%;}
-.btn-main{
-  background-color:#009e66!important;
-    border: 1px solid #009e66!important;
-    font-weight: 700;
-    color:#f0f0f0;
-}
-.contact-section h1{
-    color: #f0f0f0;
-    margin-top: -38px;
-    margin-bottom: 38px;
-    line-height: 1.5;
-    font-size: 1.5rem;
-    font-weight: 500;
-    text-align: center;
-    margin-right: 18%!important;
-
+.ul2{
+    float: left;
 }

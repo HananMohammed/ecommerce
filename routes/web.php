@@ -61,6 +61,6 @@ Route::group(['middleware'=>['auth','can:author.user']],function(){
 Auth::routes();
 
 //Front Routes
-Route::namespace('Front')->name('front.')->group(function (){
-    Route::get('/','HomepageController@index');
+Route::namespace('front')->name('front.')->group(function (){
+    Route::get('/','HomepageController@index')->name('homepage');
 });
