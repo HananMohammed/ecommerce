@@ -11,3 +11,94 @@
 .ul2{
     float: right;
 }
+.top-nav li a{
+    font-size: 1rem!important;
+    font-weight: bold;
+}
+.outer-nav .row .col-md-2{
+    margin: 0;
+    padding: 0;
+}
+.outer-nav .row .col-lg-6{
+
+    margin-right: 10% !important;
+    padding-right: 2%;
+}
+.outer-nav .row:last-child{
+    margin-left: 6%!important;
+
+}
+
+
+@media only screen and (max-width: 1250px){
+    .nav-search{
+        margin: auto;
+        width: 80%!important;
+     }
+    .nav-login {
+        margin-left: 6%!important;
+    }
+
+}
+@media only screen and (max-width: 1000px )
+{
+    .outer-nav .row .col-lg-6 {
+        margin-right: 8% !important;
+    }
+    .nav-login {
+        margin-left: 15%!important;padding-top: 15px;
+    }
+    .nav-search{
+        margin-right: 35%;
+        padding-top: 15px;
+        width: 100% !important;
+    }
+    .ul1{
+        margin-left: -5%;
+    }
+.ul2{
+    margin-top: -25px!important;
+    margin-right: -10%;
+}
+
+}
+
+@media(max-width: 770px){
+
+    .outer-nav .row .col-lg-6{
+        padding: 0;
+        margin: 0!important;
+    }
+
+    .navbar-brand img{
+        padding-right: 140px!important;
+    }
+    #language{
+        float: none;
+        text-align: center!important;
+    }
+
+}
+@media (max-width: 414px){
+    .navbar-brand img{
+        padding-right: 0!important;
+        margin-right: 20%;
+
+    }
+}
+@media (max-width: 360px){
+    .navbar-brand img{
+        padding-right: 0!important;
+        margin-right: 40%;
+        padding-top: 10px;
+    }
+    .nav-search{
+        padding-top: 0;
+        margin-top: -25px!important;
+    }
+    .nav-login{
+        margin-left: 0!important;
+        margin-top: -10px!important
+    }
+}
+
